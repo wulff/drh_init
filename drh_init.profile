@@ -142,7 +142,7 @@ function drh_init_profile_tasks(&$task, $url) {
       $batch = array(
         'operations' => array(),
         'finished' => '_drh_init_taxonomy_batch_finished',
-        'title' => st('Create content types.'),
+        'title' => st('Create taxonomies.'),
         'error_message' => st('The installation has encountered an error.'),
       );
 
@@ -163,21 +163,22 @@ function drh_init_profile_tasks(&$task, $url) {
       include_once 'includes/batch.inc';
       return _batch_page();
       break;
-
-//    case 'drh-cck':
-//      $types = file_scan_directory('./profiles/drh_init/cck', '\.inc$', array('.', '..', 'CVS', '.svn', '.git'), 0, TRUE, 'name');
-//      install_content_copy_import_from_file('./profiles/drh_init/cck/news.inc');
-//      foreach ($type as $name => $file) {
-//        install_content_copy_import_from_file($file->filename);
-//      }
-//      $task = 'drh-taxonomy';
-//      return;
-//    case 'drh-taxonomy':
-//      $task = 'profile-finished';
-//      return;
   }
 }
 
+/**
+ * Perform any final installation tasks for this profile.
+ */
+function drh_init_profile_final() {
+  install_include(drh_init_profile_modules());
+
+//drupal_set_message('cwd: '. getcwd());
+
+} 
+ 
+/**
+ * Implementation of hook_form_alter().
+ */ 
 function drh_init_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'install_configure') {
     $form['site_information']['site_name']['#default_value'] = 'drh.dk';
@@ -199,6 +200,13 @@ function _drh_init_cck_batch_finished() {
 }
 
 function _drh_init_taxonomy_batch_finished() {
+  system_theme_data();
+  db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'drh_jensen');
+  db_query("UPDATE {system} SET status = 0 WHERE type = 'theme' and name ='%s'", 'garland');
+  variable_set('theme_default', 'drh_jensen');
+
+  variable_set('site_frontpage', 'forside');
+
   variable_set('install_task', 'profile-finished');
 }
 
