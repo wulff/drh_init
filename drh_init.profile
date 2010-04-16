@@ -32,6 +32,7 @@ function drh_init_profile_modules() {
     'active_tags_popular',
     'admin_menu',
     'advanced_help',
+    'bulk_export',
     'calendar',
     'content',
     'content_copy',
@@ -70,7 +71,7 @@ function drh_init_profile_modules() {
     'pathauto',
     'primary_term',
     'search404',
-//    'strongarm',
+//    'strongarm', we'll enable this after we're done setting variables
     'text',
     'token',
     'transliteration',
@@ -156,8 +157,8 @@ function drh_init_profile_tasks(&$task, $url) {
       'default_logo' => 1,
       'logo_path' => '',
       'logo_upload' => '',
-      'default_favicon' => 1,
-      'favicon_path' => '',
+      'default_favicon' => 0,
+      'favicon_path' => 'sites/all/themes/custom/drh_jensen/favicon.ico',
       'favicon_upload' => '',
     );
     variable_set('theme_settings', $theme_settings);
@@ -281,7 +282,7 @@ function drh_init_profile_tasks(&$task, $url) {
       $mlid = menu_link_save($item);
       $item = array('link_path' => 'node/17', 'link_title' => 'Sommerkurser', 'menu_name' => 'primary-links', 'weight' => 5);
       $mlid = menu_link_save($item);
-      $item = array('link_path' => 'contact', 'link_title' => 'Kontakt', 'menu_name' => 'primary-links', 'weight' => 6);
+      $item = array('link_path' => 'kontakt', 'link_title' => 'Kontakt', 'menu_name' => 'primary-links', 'weight' => 6);
       $mlid = menu_link_save($item);
         $item = array('link_path' => 'node/9', 'link_title' => 'Kort', 'menu_name' => 'primary-links', 'weight' => 1, 'plid' => $mlid);
         menu_link_save($item);
@@ -297,6 +298,55 @@ function drh_init_profile_tasks(&$task, $url) {
       variable_set('menu_block_1_title_link', 0);
       variable_set('menu_block_ids', array(1));
 
+      // lightbox
+      variable_set('lightbox2_node_link_target', 0);
+      variable_set('lightbox2_node_link_text', 'Vis billede i fuld størrelse');
+      variable_set('lightbox2_download_link_text', '');
+      variable_set('lightbox2_image_count_str', 'Billede !current af !total');
+      variable_set('lightbox2_page_count_str', 'Side !current af !total');
+      variable_set('lightbox2_video_count_str', 'Video !current af !total');
+      variable_set('lightbox2_disable_resize', 1);
+      variable_set('lightbox2_imagefield_group_node_id', 1);
+      variable_set('lightbox2_imagefield_use_node_title', 1);
+      variable_set('lightbox2_js_location', 'footer');
+      variable_set('lightbox2_disable_close_click', 1);
+      variable_set('lightbox2_border_size', 5);
+      variable_set('lightbox2_box_color', 'fff');
+      variable_set('lightbox2_font_color', '000');
+      variable_set('lightbox2_top_position', 80);
+
+      // configure default input format
+      db_query("UPDATE {filter_formats} SET name = 'Default' WHERE format = 1");
+      db_query("DELETE FROM {filter_formats} WHERE format = 2");
+      db_query("DELETE FROM {filters} WHERE format = 2");
+
+      install_set_filter(1, 'markdown', 0, -10);
+      install_set_filter(1, 'filter', 0, -9); // html
+      install_set_filter(1, 'filter', 1, -8); // line break
+      install_set_filter(1, 'filter', 2, -7); // url
+      install_set_filter(1, 'filter', 3, -6); // html corrector
+      install_set_filter(1, 'typogrify', 0, -5);
+
+      variable_set('allowed_html_1', '<a> <em> <strong> <cite> <code> <ul> <ol> <li> <dl> <dt> <dd> <h2> <h3> <h4>');
+      variable_set('typogrify_is_widont_on_1', 0);
+
+      // date and time
+      variable_set('date_default_timezone_name', 'Europe/Copenhagen');
+      variable_set('configurable_timezones', 0);
+      variable_set('date_first_day', 1);
+
+      // users & roles
+      install_add_role('administrator');
+
+      $rid = install_get_rid('anonymous user');
+      install_add_permissions($rid, array('access comments', 'access site-wide contact form', 'view imagecache grid-16', 'view imagecache grid-9-crop', 'view imagecache lightbox', 'view imagecache thumb_front', 'view imagecache thumb_node'));
+
+      $rid = install_get_rid('authenticated user');
+      install_add_permissions($rid, array('access comments', 'access site-wide contact form', 'view imagecache grid-16', 'view imagecache grid-9-crop', 'view imagecache lightbox', 'view imagecache thumb_front', 'view imagecache thumb_node'));
+
+      install_add_user('wulff', '1234', 'wulff@ratatosk.net', array('administrator'), 1);
+      install_add_user('hans', '1234', 'hjh@drh.dk', array('administrator'), 1);
+
       // enable strongarm
       _drupal_install_module('strongarm');
       module_enable(array('strongarm'));
@@ -306,7 +356,7 @@ function drh_init_profile_tasks(&$task, $url) {
       break;
   }
 }
- 
+
 /**
  * Perform any final installation tasks for this profile.
  */
@@ -316,7 +366,7 @@ function drh_init_profile_final() {
 
 /**
  * Implementation of hook_form_alter().
- */ 
+ */
 function drh_init_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'install_configure') {
     $form['site_information']['site_name']['#default_value'] = 'drh.dk';
@@ -373,7 +423,7 @@ function _drh_init_taxonomy_export_import($content) {
 
 function _drh_init_create_nodes($nodes) {
 //  @eval($content);
-  
+
   if (isset($nodes) && is_array($nodes)) {
     foreach ($nodes as $nid => $node) {
       $default = array(

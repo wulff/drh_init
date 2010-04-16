@@ -4,6 +4,10 @@ $nodes = array(
     'type' => 'profile',
     'title' => 'Hans J Hansen',
     'body' => '',
-    'uid' => 1,
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
 );

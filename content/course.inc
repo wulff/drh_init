@@ -4,24 +4,40 @@ $nodes = array(
     'type' => 'course',
     'title' => 'Rotation',
     'body' => '',
-    'uid' => 1,
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'course',
     'title' => 'Artspace',
     'body' => '',
-    'uid' => 1,
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'course',
     'title' => 'Bas – solo',
     'body' => '',
-    'uid' => 1,
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'course',
     'title' => 'Bas – workshop',
     'body' => '',
-    'uid' => 1,
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
 );

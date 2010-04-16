@@ -4,6 +4,11 @@ $nodes = array(
     'type' => 'topic',
     'title' => 'Bas',
     'body' => '',
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'topic',
@@ -20,31 +25,61 @@ Normalt er der 60-70 musikelever, og 8-16 teknikere, men med sang- og producerli
         'value' => 'Som musiker på den rytmiske kommer du til at spille på et af 7-10 sammenspilshold, som sammensættes udfra jeres ønsker og kunnen. Vi niveaudeler ikke - vi laver hold der lyder godt!',
       ),
     ),
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'topic',
     'title' => 'Trommer',
     'body' => '',
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'topic',
     'title' => 'Sang',
     'body' => '',
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'topic',
     'title' => 'Klaver',
     'body' => '',
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'topic',
     'title' => 'Guitar',
     'body' => '',
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'topic',
     'title' => 'Blæser',
     'body' => '',
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'topic',
@@ -69,6 +104,11 @@ Det  årlige inspirerende familiekursus med bl.a. tegne/maleværksted, musikalsk
 
 Vi arbejder på foldere og tilmeldingsblanketter, hvis du vil vide mere kan du nedenfor læse om kurserne i 2009. Næste års kurser vil tage udgangspunkt i dette års.
 Ved hvert kursus kommer der et link til download af en folder. Hvis du hellere vil have folderen tilsendt kan du kontakte højskolens kontor. Tlf. 5936 0600, eller mail.',
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'topic',
@@ -143,6 +183,11 @@ Alle disse steder arbejdes der både med programmerne ProTools og LogicStudio.",
         'value' => 'Linjen henvender til dig som har lyst til fordybe dig i sangskrivning og de moderne musikproduktionsmetoder.',
       ),
     ),
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
+      ),
+    ),
   ),
   array(
     'type' => 'topic',
@@ -153,6 +198,11 @@ Vi arbejder også med PA-lyd. I salen og caféen kommer Du til at lave opstillin
     'field_teaser' => array(
       0 => array(
         'value' => 'På tekniklinjen får du mulighed for at opbygge et indgående kendskab til analog og digital indspilningsteknik i skolens 4 studier.',
+      ),
+    ),
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 1,
       ),
     ),
   ),
