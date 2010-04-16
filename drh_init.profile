@@ -184,7 +184,6 @@ function drh_init_profile_tasks(&$task, $url) {
       batch_process($url, $url);
 
       break;
-
     case 'drh-cck-batch':
       include_once 'includes/batch.inc';
       return _batch_page();
@@ -210,13 +209,17 @@ function drh_init_profile_tasks(&$task, $url) {
       batch_process($url, $url);
 
       break;
-
     case 'drh-taxonomy-batch':
       include_once 'includes/batch.inc';
       return _batch_page();
       break;
 
     case 'drh-content':
+      if (file_exists('./sites/default/files/default.jpg')) {
+        unlink('./sites/default/files/default.jpg');
+      }
+      install_upload_file('./profiles/drh_init/images/default.jpg', array(), 'sites/default/files', FILE_EXISTS_RENAME, 'image/jpeg');
+
       $batch = array(
         'operations' => array(),
         'finished' => '_drh_init_content_batch_finished',
@@ -226,7 +229,7 @@ function drh_init_profile_tasks(&$task, $url) {
 
       $types = file_scan_directory('./profiles/drh_init/content', '\.inc$', array('.', '..', 'CVS', '.svn', '.git'), 0, TRUE, 'name');
 
-      foreach (array('teaser', 'page', 'topic') as $name) {
+      foreach (array('teaser', 'page', 'topic', 'image') as $name) {
         if (isset($types[$name])) {
           include $types[$name]->filename;
           $batch['operations'][] = array('_drh_init_create_nodes', array($nodes));
@@ -244,7 +247,6 @@ function drh_init_profile_tasks(&$task, $url) {
       batch_process($url, $url);
 
       break;
-
     case 'drh-content-batch':
       include_once 'includes/batch.inc';
       return _batch_page();
