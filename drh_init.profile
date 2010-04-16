@@ -70,7 +70,7 @@ function drh_init_profile_modules() {
     'pathauto',
     'primary_term',
     'search404',
-    'strongarm',
+//    'strongarm',
     'text',
     'token',
     'transliteration',
@@ -102,6 +102,7 @@ function drh_init_profile_task_list() {
   return array(
     'drh-cck-batch' => 'Create content types',
     'drh-taxonomy-batch' => 'Create taxonomies',
+    'drh-content-batch' => 'Create content',
   );
 }
 
@@ -111,8 +112,59 @@ function drh_init_profile_task_list() {
 function drh_init_profile_tasks(&$task, $url) {
   install_include(drh_init_profile_modules());
 
+  if ('profile' == $task) {
+    $task = 'drh-cck';
+
+    system_theme_data();
+    db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'drh_jensen');
+    db_query("UPDATE {system} SET status = 0 WHERE type = 'theme' and name ='%s'", 'garland');
+    variable_set('theme_default', 'drh_jensen');
+
+    variable_set('site_frontpage', 'forside');
+
+    variable_set('page_manager_node_edit_disabled', FALSE);
+    variable_set('page_manager_node_view_disabled', FALSE);
+
+    $values = array();
+    $values['category'] = 'Webmaster';
+    $values['recipients'] = 'webmaster@drh.dk';
+    $values['reply'] = '';
+    $values['weight'] = 1;
+    $values['selected'] = TRUE;
+    drupal_write_record('contact', $values);
+
+    $theme_settings = array (
+      'toggle_logo' => 0,
+      'toggle_name' => 1,
+      'toggle_slogan' => 0,
+      'toggle_mission' => 0,
+      'toggle_node_user_picture' => 0,
+      'toggle_comment_user_picture' => 0,
+      'toggle_search' => 0,
+      'toggle_favicon' => 1,
+      'toggle_primary_links' => 1,
+      'toggle_secondary_links' => 1,
+      'toggle_node_info_profile' => 0,
+      'toggle_node_info_event' => 0,
+      'toggle_node_info_image' => 0,
+      'toggle_node_info_facility' => 0,
+      'toggle_node_info_course' => 0,
+      'toggle_node_info_teaser' => 0,
+      'toggle_node_info_topic' => 0,
+      'toggle_node_info_news' => 0,
+      'toggle_node_info_page' => 0,
+      'default_logo' => 1,
+      'logo_path' => '',
+      'logo_upload' => '',
+      'default_favicon' => 1,
+      'favicon_path' => '',
+      'favicon_upload' => '',
+    );
+    variable_set('theme_settings', $theme_settings);
+  }
+
   switch ($task) {
-    case 'profile':
+    case 'drh-cck':
       $batch = array(
         'operations' => array(),
         'finished' => '_drh_init_cck_batch_finished',
@@ -163,19 +215,103 @@ function drh_init_profile_tasks(&$task, $url) {
       include_once 'includes/batch.inc';
       return _batch_page();
       break;
+
+    case 'drh-content':
+      $batch = array(
+        'operations' => array(),
+        'finished' => '_drh_init_content_batch_finished',
+        'title' => st('Create content.'),
+        'error_message' => st('The installation has encountered an error.'),
+      );
+
+      $types = file_scan_directory('./profiles/drh_init/content', '\.inc$', array('.', '..', 'CVS', '.svn', '.git'), 0, TRUE, 'name');
+
+      foreach (array('teaser', 'page', 'topic') as $name) {
+        if (isset($types[$name])) {
+          include $types[$name]->filename;
+          $batch['operations'][] = array('_drh_init_create_nodes', array($nodes));
+          unset($types[$name]);
+        }
+      }
+      foreach ($types as $name => $file) {
+        include $file->filename;
+        $batch['operations'][] = array('_drh_init_create_nodes', array($nodes));
+      }
+
+      variable_set('install_task', 'drh-content-batch');
+
+      batch_set($batch);
+      batch_process($url, $url);
+
+      break;
+
+    case 'drh-content-batch':
+      include_once 'includes/batch.inc';
+      return _batch_page();
+      break;
+
+    case 'drh-finalize':
+      $item = array('link_path' => 'node/8', 'link_title' => 'Om skolen', 'menu_name' => 'primary-links', 'weight' => 1);
+      $mlid = menu_link_save($item);
+        $item = array('link_path' => 'node/7', 'link_title' => 'Praktisk', 'menu_name' => 'primary-links', 'weight' => 1, 'plid' => $mlid);
+        menu_link_save($item);
+        $item = array('link_path' => 'node/6', 'link_title' => 'Hverdagen', 'menu_name' => 'primary-links', 'weight' => 4, 'plid' => $mlid);
+        menu_link_save($item);
+        $item = array('link_path' => 'node/5', 'link_title' => 'Forlag', 'menu_name' => 'primary-links', 'weight' => 6, 'plid' => $mlid);
+        menu_link_save($item);
+      $item = array('link_path' => 'node/11', 'link_title' => 'Musiklinie', 'menu_name' => 'primary-links', 'weight' => 2);
+      $mlid = menu_link_save($item);
+        $item = array('link_path' => 'node/10', 'link_title' => 'Bas', 'menu_name' => 'primary-links', 'weight' => 1, 'plid' => $mlid);
+        menu_link_save($item);
+        $item = array('link_path' => 'node/15', 'link_title' => 'Guitar', 'menu_name' => 'primary-links', 'weight' => 2, 'plid' => $mlid);
+        menu_link_save($item);
+        $item = array('link_path' => 'node/13', 'link_title' => 'Sang', 'menu_name' => 'primary-links', 'weight' => 3, 'plid' => $mlid);
+        menu_link_save($item);
+        $item = array('link_path' => 'node/16', 'link_title' => 'Blæser', 'menu_name' => 'primary-links', 'weight' => 4, 'plid' => $mlid);
+        menu_link_save($item);
+        $item = array('link_path' => 'node/14', 'link_title' => 'Klaver', 'menu_name' => 'primary-links', 'weight' => 5, 'plid' => $mlid);
+        menu_link_save($item);
+        $item = array('link_path' => 'node/12', 'link_title' => 'Trommer', 'menu_name' => 'primary-links', 'weight' => 6, 'plid' => $mlid);
+        menu_link_save($item);
+      $item = array('link_path' => 'node/19', 'link_title' => 'Tekniklinie', 'menu_name' => 'primary-links', 'weight' => 3);
+      $mlid = menu_link_save($item);
+      $item = array('link_path' => 'node/18', 'link_title' => 'Sang- og producerlinie', 'menu_name' => 'primary-links', 'weight' => 4);
+      $mlid = menu_link_save($item);
+      $item = array('link_path' => 'node/17', 'link_title' => 'Sommerkurser', 'menu_name' => 'primary-links', 'weight' => 5);
+      $mlid = menu_link_save($item);
+      $item = array('link_path' => 'contact', 'link_title' => 'Kontakt', 'menu_name' => 'primary-links', 'weight' => 6);
+      $mlid = menu_link_save($item);
+        $item = array('link_path' => 'node/9', 'link_title' => 'Kort', 'menu_name' => 'primary-links', 'weight' => 1, 'plid' => $mlid);
+        menu_link_save($item);
+
+      // create secondary navigation menu block
+      variable_set('menu_block_1_admin_title', 'Sekundær navigation');
+      variable_set('menu_block_1_depth', 0);
+      variable_set('menu_block_1_expanded', 0);
+      variable_set('menu_block_1_follow', 0);
+      variable_set('menu_block_1_level', 2);
+      variable_set('menu_block_1_parent', 'primary-links:0');
+      variable_set('menu_block_1_sort', 0);
+      variable_set('menu_block_1_title_link', 0);
+      variable_set('menu_block_ids', array(1));
+
+      // enable strongarm
+      _drupal_install_module('strongarm');
+      module_enable(array('strongarm'));
+
+      $task = 'profile-finished';
+
+      break;
   }
 }
-
+ 
 /**
  * Perform any final installation tasks for this profile.
  */
 function drh_init_profile_final() {
-  install_include(drh_init_profile_modules());
+  variable_set('foo', TRUE);
+}
 
-//drupal_set_message('cwd: '. getcwd());
-
-} 
- 
 /**
  * Implementation of hook_form_alter().
  */ 
@@ -200,14 +336,11 @@ function _drh_init_cck_batch_finished() {
 }
 
 function _drh_init_taxonomy_batch_finished() {
-  system_theme_data();
-  db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'drh_jensen');
-  db_query("UPDATE {system} SET status = 0 WHERE type = 'theme' and name ='%s'", 'garland');
-  variable_set('theme_default', 'drh_jensen');
+  variable_set('install_task', 'drh-content');
+}
 
-  variable_set('site_frontpage', 'forside');
-
-  variable_set('install_task', 'profile-finished');
+function _drh_init_content_batch_finished() {
+  variable_set('install_task', 'drh-finalize');
 }
 
 function _drh_init_content_copy_import($content) {
@@ -233,5 +366,29 @@ function _drh_init_taxonomy_export_import($content) {
 
   if (_taxonomy_export_prepare_import_data($form_state['values']['import_data'])) {
     taxonomy_export_import_submit(array(), $form_state);
+  }
+}
+
+function _drh_init_create_nodes($nodes) {
+//  @eval($content);
+  
+  if (isset($nodes) && is_array($nodes)) {
+    foreach ($nodes as $nid => $node) {
+      $default = array(
+        'nid' => NULL,
+        'title' => '-- no title--',
+        'body' => NULL,
+        'type' => 'page',
+        'teaser' => NULL,
+        'log' => '',
+        'created' => '',
+        'format' => 1, // TODO: use the format containing markdown
+        'uid' => 1,
+      );
+      $node = array_merge($default, $node);
+
+      $node = (object) $node;
+      node_save($node);
+    }
   }
 }
