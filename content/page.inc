@@ -4,9 +4,17 @@ $nodes = array(
     'type' => 'page',
     'title' => 'Forlag',
     'body' => '',
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -14,9 +22,17 @@ $nodes = array(
     'type' => 'page',
     'title' => 'Hverdagen',
     'body' => '',
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -24,9 +40,17 @@ $nodes = array(
     'type' => 'page',
     'title' => 'Praktisk',
     'body' => '',
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -44,9 +68,17 @@ Den Rytmiske Højskole ligger ved Vig i Odsherred -- mellem Nykøbing Sj. og Hol
 Det bedste indtryk af skolen får du selvfølgelig ved at besøge os. Hvis du ringer (tlf. 59 360 600) eller mailer i forvejen, sørger vi for en rundvisning.
 
 Læs også vor [myspaceside](http://myspace.com/denrytmiskehojskole) Vi er desuden på facebook www.facebook.dk/denrytmiske og youtube. Find os der.',
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -54,6 +86,14 @@ Læs også vor [myspaceside](http://myspace.com/denrytmiskehojskole) Vi er desud
     'type' => 'page',
     'title' => 'Kort',
     'body' => 'På kortet ovenfor kan du se hvordan du finder os.',
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_map' => array(
       0 => array(
         'value' => '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=jyderupvej+18,4560&amp;sll=55.869147,11.228027&amp;sspn=6.56401,14.128418&amp;hq=&amp;hnear=Jyderupvej+18,+4560,+Vig,+Denmark&amp;ie=UTF8&amp;ll=55.88648,11.572037&amp;spn=0.134783,0.291824&amp;z=11&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=jyderupvej+18,4560&amp;sll=55.869147,11.228027&amp;sspn=6.56401,14.128418&amp;hq=&amp;hnear=Jyderupvej+18,+4560,+Vig,+Denmark&amp;ie=UTF8&amp;ll=55.88648,11.572037&amp;spn=0.134783,0.291824&amp;z=11&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>',

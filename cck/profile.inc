@@ -16,12 +16,12 @@ $content['type']  = array (
   'language_content_type' => '0',
   'pt_vocabs' => 
   array (
+    4 => false,
+    6 => false,
     1 => false,
     2 => false,
     3 => false,
-    4 => false,
     5 => false,
-    6 => false,
   ),
   'old_type' => 'profile',
   'orig_type' => '',
@@ -187,7 +187,7 @@ $content['groups']  = array (
         'label' => 'above',
       ),
     ),
-    'weight' => '1',
+    'weight' => '2',
     'group_name' => 'group_courses',
   ),
   3 => 
@@ -237,7 +237,7 @@ $content['groups']  = array (
         'label' => 'above',
       ),
     ),
-    'weight' => '2',
+    'weight' => '3',
     'group_name' => 'group_images',
   ),
   4 => 
@@ -287,7 +287,7 @@ $content['groups']  = array (
         'label' => 'above',
       ),
     ),
-    'weight' => '3',
+    'weight' => '4',
     'group_name' => 'group_links',
   ),
 );
@@ -577,6 +577,102 @@ $content['fields']  = array (
   ),
   3 => 
   array (
+    'label' => 'Teaser',
+    'field_name' => 'field_teaser',
+    'type' => 'text',
+    'widget_type' => 'text_textarea',
+    'change' => 'Change basic information',
+    'weight' => 0,
+    'rows' => '3',
+    'size' => 60,
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        'format' => '1',
+        '_error_element' => 'default_value_widget][field_teaser][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_teaser' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          'format' => '1',
+          '_error_element' => 'default_value_widget][field_teaser][0][value',
+        ),
+      ),
+    ),
+    'group' => false,
+    'required' => 0,
+    'multiple' => '0',
+    'text_processing' => '1',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+      'format' => 
+      array (
+        'type' => 'int',
+        'unsigned' => true,
+        'not null' => false,
+        'views' => false,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '6',
+      'parent' => '',
+      'teaser_front' => 
+      array (
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      'label' => 
+      array (
+        'format' => 'hidden',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  4 => 
+  array (
     'label' => 'Fag',
     'field_name' => 'field_course_ref',
     'type' => 'nodereference',
@@ -680,7 +776,7 @@ $content['fields']  = array (
       ),
     ),
   ),
-  4 => 
+  5 => 
   array (
     'label' => 'Billede',
     'field_name' => 'field_image_ref',
@@ -784,7 +880,7 @@ $content['fields']  = array (
       ),
     ),
   ),
-  5 => 
+  6 => 
   array (
     'label' => 'Link',
     'field_name' => 'field_link',
@@ -894,10 +990,10 @@ $content['fields']  = array (
 );
 $content['extra']  = array (
   'title' => '-1',
-  'body_field' => '0',
-  'revision_information' => '5',
-  'comment_settings' => '7',
-  'menu' => '4',
+  'body_field' => '1',
+  'revision_information' => '6',
+  'comment_settings' => '8',
+  'menu' => '5',
   'taxonomy' => '-3',
-  'path' => '6',
+  'path' => '7',
 );

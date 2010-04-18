@@ -221,6 +221,16 @@ function drh_init_profile_tasks(&$task, $url) {
       }
       install_upload_file('./profiles/drh_init/images/default.jpg', array(), 'sites/default/files', FILE_EXISTS_RENAME, 'image/jpeg');
 
+      if (file_exists('./sites/default/files/teaser_on.jpg')) {
+        unlink('./sites/default/files/teaser_on.jpg');
+      }
+      install_upload_file('./profiles/drh_init/images/teaser_on.jpg', array(), 'sites/default/files', FILE_EXISTS_RENAME, 'image/jpeg');
+
+      if (file_exists('./sites/default/files/teaser_off.jpg')) {
+        unlink('./sites/default/files/teaser_off.jpg');
+      }
+      install_upload_file('./profiles/drh_init/images/teaser_off.jpg', array(), 'sites/default/files', FILE_EXISTS_RENAME, 'image/jpeg');
+
       $batch = array(
         'operations' => array(),
         'finished' => '_drh_init_content_batch_finished',
@@ -335,6 +345,10 @@ function drh_init_profile_tasks(&$task, $url) {
       variable_set('configurable_timezones', 0);
       variable_set('date_first_day', 1);
 
+      variable_set('date_format_long', 'l, j F, Y - H:i');
+      variable_set('date_format_medium', 'D, d/m/Y - H:i');
+      variable_set('date_format_short', 'd/m/Y - H:i');
+
       // users & roles
       install_add_role('administrator');
 
@@ -346,6 +360,9 @@ function drh_init_profile_tasks(&$task, $url) {
 
       install_add_user('wulff', '1234', 'wulff@ratatosk.net', array('administrator'), 1);
       install_add_user('hans', '1234', 'hjh@drh.dk', array('administrator'), 1);
+
+      variable_set('views_no_hover_links', TRUE);
+      variable_set('ctools_content_all_views', FALSE);
 
       // enable strongarm
       _drupal_install_module('strongarm');

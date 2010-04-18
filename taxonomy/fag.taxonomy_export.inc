@@ -5,7 +5,7 @@ $taxonomy_export = array (
   'vocabulary' => 
   (object) (array(
      'vid' => '2',
-     'name' => 'Fag',
+     'name' => 'Fagtype',
      'description' => '',
      'help' => '',
      'relations' => '1',
@@ -14,7 +14,7 @@ $taxonomy_export = array (
      'required' => '1',
      'tags' => '0',
      'module' => 'taxonomy',
-     'weight' => '0',
+     'weight' => '4',
      'nodes' => 
     array (
       'course' => 'course',

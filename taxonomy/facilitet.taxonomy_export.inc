@@ -14,7 +14,7 @@ $taxonomy_export = array (
      'required' => '1',
      'tags' => '0',
      'module' => 'taxonomy',
-     'weight' => '0',
+     'weight' => '3',
      'nodes' => 
     array (
       'facility' => 'facility',

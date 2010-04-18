@@ -4,9 +4,20 @@ $nodes = array(
     'type' => 'topic',
     'title' => 'Bas',
     'body' => '',
+    'taxonomy' => array(
+      15 => 15,
+    ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -25,9 +36,17 @@ Normalt er der 60-70 musikelever, og 8-16 teknikere, men med sang- og producerli
         'value' => 'Som musiker på den rytmiske kommer du til at spille på et af 7-10 sammenspilshold, som sammensættes udfra jeres ønsker og kunnen. Vi niveaudeler ikke - vi laver hold der lyder godt!',
       ),
     ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -35,9 +54,20 @@ Normalt er der 60-70 musikelever, og 8-16 teknikere, men med sang- og producerli
     'type' => 'topic',
     'title' => 'Trommer',
     'body' => '',
+    'taxonomy' => array(
+      23 => 23,
+    ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -45,9 +75,20 @@ Normalt er der 60-70 musikelever, og 8-16 teknikere, men med sang- og producerli
     'type' => 'topic',
     'title' => 'Sang',
     'body' => '',
+    'taxonomy' => array(
+      20 => 20,
+    ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -55,9 +96,20 @@ Normalt er der 60-70 musikelever, og 8-16 teknikere, men med sang- og producerli
     'type' => 'topic',
     'title' => 'Klaver',
     'body' => '',
+    'taxonomy' => array(
+      18 => 18,
+    ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -65,19 +117,41 @@ Normalt er der 60-70 musikelever, og 8-16 teknikere, men med sang- og producerli
     'type' => 'topic',
     'title' => 'Guitar',
     'body' => '',
+    'taxonomy' => array(
+      17 => 17,
+    ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
   array(
     'type' => 'topic',
     'title' => 'Blæser',
+    'taxonomy' => array(
+      16 => 16,
+    ),
     'body' => '',
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -104,9 +178,20 @@ Det  årlige inspirerende familiekursus med bl.a. tegne/maleværksted, musikalsk
 
 Vi arbejder på foldere og tilmeldingsblanketter, hvis du vil vide mere kan du nedenfor læse om kurserne i 2009. Næste års kurser vil tage udgangspunkt i dette års.
 Ved hvert kursus kommer der et link til download af en folder. Hvis du hellere vil have folderen tilsendt kan du kontakte højskolens kontor. Tlf. 5936 0600, eller mail.',
+    'taxonomy' => array(
+      22 => 22,
+    ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -178,6 +263,17 @@ Måske 3 sing-a-song-writere på en turné, mens en dj og en human-beat-box kan 
 Vi har 1 stort mere analogt orienteret indspilningsstudie med flere indspilningsrum, 1 stort digitalt studie, 2 mindre digitale studier med indspilningsrum, samt 10 produktionssatelitter i form af iMac's som er opsat til musikproduktion.
 
 Alle disse steder arbejdes der både med programmerne ProTools og LogicStudio.",
+    'taxonomy' => array(
+      21 => 21,
+    ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_teaser' => array(
       0 => array(
         'value' => 'Linjen henvender til dig som har lyst til fordybe dig i sangskrivning og de moderne musikproduktionsmetoder.',
@@ -185,7 +281,7 @@ Alle disse steder arbejdes der både med programmerne ProTools og LogicStudio.",
     ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
@@ -195,6 +291,17 @@ Alle disse steder arbejdes der både med programmerne ProTools og LogicStudio.",
     'body' => 'På tekniklinjen får du mulighed for at opbygge et indgående kendskab til analog og digital inspilningsteknik i skolens 4 studier. Vi arbejder bl.a. med de forskellige faser i studieindspilningen, herunder grundlyd, hovedtelefon-mix til musikerne, overdubs og mixdown med effekter og dynamics. Endvidere mikrofonopstilling, signalvej i studierne, mixerpultens opbygning og krydsfelt, gennemgang af mikrofontyper og karakteristiker. Af teoretiske emner kan nævnes akustik og lydens udbredelse i et rum, og spektral gehør som træner evnen til at identificere de enkelte frekvenser i frekvensområdet. Et overordnet mål med lydteknikundervisningen er samarbejdet mellem musikere og teknikere. Fokus er lagt på indspilning af skolens orkestre som gennem hele semestret kommer på besøg i lydstudierne. I løbet af semestret vil der være flere emne-uger med et særligt indhold, også her vil studieindspilning være i centrum. Efter den første måned med basis-forløb vil du få mulighed for at tage et "kørekort" til skolens 2 store studier. Det vil give dig fuld adgang studierne.
 
 Vi arbejder også med PA-lyd. I salen og caféen kommer Du til at lave opstilling til koncerter. Du vil som tekniker på Den Rytmiske Højskole kunne opbygge rutine indenfor livelyd, både front-of-house og monitor på scenen, med henblik på turné-ugen hvor musikere og teknikere rejser rundt i Danmark og spiller koncerter på andre skoler.',
+    'taxonomy' => array(
+      19 => 19,
+    ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
     'field_teaser' => array(
       0 => array(
         'value' => 'På tekniklinjen får du mulighed for at opbygge et indgående kendskab til analog og digital indspilningsteknik i skolens 4 studier.',
@@ -202,7 +309,7 @@ Vi arbejder også med PA-lyd. I salen og caféen kommer Du til at lave opstillin
     ),
     'field_image_ref' => array(
       0 => array(
-        'nid' => 1,
+        'nid' => 20,
       ),
     ),
   ),
