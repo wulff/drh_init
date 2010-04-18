@@ -128,14 +128,14 @@ Det er altså op til sammenspilsholdet at give bandet karakter, indhold og udtry
   /* --- BAS -------------------------------------------------------------- */
   array(
     'type' => 'course',
-    'title' => 'Bas – solo',
+    'title' => 'Soloundervisning',
     'sticky' => 1,
     'field_teaser' => array(
       0 => array(
-        'value' => '',
+        'value' => 'På bassen arbejder vi med teknik (fingersætning, håndstilling, klang m.m.), groove/time, akkorder og improvisation/teori, og vi vil arbejde med de meget forskellige roller der er i musikken for bassisten. Der arbejdes med noder og becifring, men også dét at lære musik "på øret".',
       )
     ),
-    'body' => '',
+    'body' => 'På bassen arbejder vi med teknik (fingersætning, håndstilling, klang m.m.), groove/time, akkorder og improvisation/teori, og vi vil arbejde med de meget forskellige roller der er i musikken for bassisten. Der arbejdes med noder og becifring, men også dét at lære musik "på øret". At lytte numre eller soloer af og bruge idéerne i en anden sammenhæng eller i egne numre, er en fantastisk metode til at lære at forstå instrumentets muligheder. Det er meget inspirerende og nok det vigtigste værktøj af alle. Soloundervisningen tager naturligvis udgangspunkt i dit niveau. Desuden er det også vigtigt at tilrettelægge undervisningen i forhold til dine aktiviteter i øvrigt på sammenspilsholdet og i fritidsbands på højskolen. Hensigten er at give dig de bedste muligheder for at afprøve metoder og idéer fra soloundervisningen i en aktuel sammenspilssituation. At få inspiration og "blod på tanden" til at gå videre med musikken.',
     'taxonomy' => array(
       15 => 15,
     ),

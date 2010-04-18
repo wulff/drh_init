@@ -39,7 +39,7 @@ $taxonomy_export = array (
     (object) (array(
        'tid' => '26',
        'vid' => '5',
-       'name' => 'Anden lærer',
+       'name' => 'Andre lærere',
        'description' => '',
        'weight' => '0',
        'depth' => 0,
@@ -65,7 +65,7 @@ $taxonomy_export = array (
     (object) (array(
        'tid' => '24',
        'vid' => '5',
-       'name' => 'Musiklærer',
+       'name' => 'Musiklærere',
        'description' => '',
        'weight' => '0',
        'depth' => 0,
@@ -104,7 +104,7 @@ $taxonomy_export = array (
     (object) (array(
        'tid' => '25',
        'vid' => '5',
-       'name' => 'Timelærer',
+       'name' => 'Timelærere',
        'description' => '',
        'weight' => '0',
        'depth' => 0,

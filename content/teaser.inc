@@ -4,7 +4,7 @@ $nodes = array(
     'type' => 'teaser',
     'title' => 'Musiklinie',
     'body' => '[Bas](http://drh.local/bas)
-[Guitar](http://drh.local/guitar),
+[Guitar](http://drh.local/guitar)
 [Sang](http://drh.local/sang)
 [Blæser](http://drh.local/blaeser)
 [Klaver](http://drh.local/klaver)

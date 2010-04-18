@@ -240,6 +240,7 @@ function drh_init_profile_tasks(&$task, $url) {
 
       $types = file_scan_directory('./profiles/drh_init/content', '\.inc$', array('.', '..', 'CVS', '.svn', '.git'), 0, TRUE, 'name');
 
+      // make sure we get predictable node ids
       foreach (array('teaser', 'page', 'topic', 'image') as $name) {
         if (isset($types[$name])) {
           include $types[$name]->filename;
@@ -269,6 +270,8 @@ function drh_init_profile_tasks(&$task, $url) {
         $item = array('link_path' => 'node/7', 'link_title' => 'Praktisk', 'menu_name' => 'primary-links', 'weight' => 1, 'plid' => $mlid);
         menu_link_save($item);
         $item = array('link_path' => 'node/6', 'link_title' => 'Hverdagen', 'menu_name' => 'primary-links', 'weight' => 4, 'plid' => $mlid);
+        menu_link_save($item);
+        $item = array('link_path' => 'ansatte', 'link_title' => 'Ansatte', 'menu_name' => 'primary-links', 'weight' => 5, 'plid' => $mlid);
         menu_link_save($item);
         $item = array('link_path' => 'node/5', 'link_title' => 'Forlag', 'menu_name' => 'primary-links', 'weight' => 6, 'plid' => $mlid);
         menu_link_save($item);
