@@ -50,6 +50,7 @@ $nodes = array(
     'title' => 'Stig Kaufmanas',
     'body' => 'Stig underviser i lydteknik.',
     'taxonomy' => array(
+      15 => 15, // bas
       18 => 18, // klaver
       19 => 19, // lydteknik
       27 => 27, // musiklærer

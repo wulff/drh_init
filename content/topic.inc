@@ -3,7 +3,15 @@ $nodes = array(
   array(
     'type' => 'topic',
     'title' => 'Bas',
-    'body' => '',
+    'body' => "På baslinjen vil du få soloundervisning på bas, basworkshop og spille bas på et sammenspilshold. Derudover er der en lang række fag, nogle fælles for alle, andre er valgfag.
+
+Udenfor undervisningstiden er alle vores faciliteter åbne, så der fx kan øves, spilles i fritidsbands eller laves studieindspilninger.
+
+Når du vælger baslinjen er der rigtig mange emner at tage fat på. Lad mig derfor nævne et par af de vigtigste emner: Vi vil komme til at arbejde med forskellige teknikker så som venstre-/højrehåndsteknik, hvordan du får en god klang/lyd og skalateknik så du kan finde rundt på bassen. Groove er selvfølgelig en vigtig del, og da solospil/improvisation og akkorder er blevet en del af det at spille bas, skal vi også arbejde med det.
+
+## Udstyret
+
+Som Bassist kan du bla. møde Mesa Boogie bass 400+, SWR 350 X, Hartke 3500, Ampeg og Eden's nye Nemesis serie mm.",
     'taxonomy' => array(
       15 => 15,
     ),
@@ -288,9 +296,15 @@ Alle disse steder arbejdes der både med programmerne ProTools og LogicStudio.",
   array(
     'type' => 'topic',
     'title' => 'Tekniklinie',
-    'body' => 'På tekniklinjen får du mulighed for at opbygge et indgående kendskab til analog og digital inspilningsteknik i skolens 4 studier. Vi arbejder bl.a. med de forskellige faser i studieindspilningen, herunder grundlyd, hovedtelefon-mix til musikerne, overdubs og mixdown med effekter og dynamics. Endvidere mikrofonopstilling, signalvej i studierne, mixerpultens opbygning og krydsfelt, gennemgang af mikrofontyper og karakteristiker. Af teoretiske emner kan nævnes akustik og lydens udbredelse i et rum, og spektral gehør som træner evnen til at identificere de enkelte frekvenser i frekvensområdet. Et overordnet mål med lydteknikundervisningen er samarbejdet mellem musikere og teknikere. Fokus er lagt på indspilning af skolens orkestre som gennem hele semestret kommer på besøg i lydstudierne. I løbet af semestret vil der være flere emne-uger med et særligt indhold, også her vil studieindspilning være i centrum. Efter den første måned med basis-forløb vil du få mulighed for at tage et "kørekort" til skolens 2 store studier. Det vil give dig fuld adgang studierne.
+    'body' => 'På tekniklinjen får du mulighed for at opbygge et indgående kendskab til analog og digital inspilningsteknik i skolens 4 studier. Vi arbejder bl.a. med de forskellige faser i studieindspilningen, herunder grundlyd, hovedtelefon-mix til musikerne, overdubs og mixdown med effekter og dynamics. Endvidere mikrofonopstilling, signalvej i studierne, mixerpultens opbygning og krydsfelt, gennemgang af mikrofontyper og karakteristiker.
 
-Vi arbejder også med PA-lyd. I salen og caféen kommer Du til at lave opstilling til koncerter. Du vil som tekniker på Den Rytmiske Højskole kunne opbygge rutine indenfor livelyd, både front-of-house og monitor på scenen, med henblik på turné-ugen hvor musikere og teknikere rejser rundt i Danmark og spiller koncerter på andre skoler.',
+Af teoretiske emner kan nævnes akustik og lydens udbredelse i et rum, og spektral gehør som træner evnen til at identificere de enkelte frekvenser i frekvensområdet.
+
+Et overordnet mål med lydteknikundervisningen er samarbejdet mellem musikere og teknikere. Fokus er lagt på indspilning af skolens orkestre som gennem hele semestret kommer på besøg i lydstudierne. I løbet af semestret vil der være flere emne-uger med et særligt indhold, også her vil studieindspilning være i centrum.
+
+Efter den første måned med basis-forløb vil du få mulighed for at tage et "kørekort" til skolens 2 store studier. Det vil give dig fuld adgang studierne.
+
+Vi arbejder også med PA-lyd. I salen og caféen kommer du til at lave opstilling til koncerter. Du vil som tekniker på Den Rytmiske Højskole kunne opbygge rutine indenfor livelyd, både front-of-house og monitor på scenen, med henblik på turné-ugen hvor musikere og teknikere rejser rundt i Danmark og spiller koncerter på andre skoler.',
     'taxonomy' => array(
       19 => 19,
     ),
