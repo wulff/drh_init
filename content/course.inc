@@ -83,6 +83,47 @@ Det er altså op til sammenspilsholdet at give bandet karakter, indhold og udtry
       ),
     ),
   ),
+  array(
+    'type' => 'course',
+    'title' => 'Linjefag',
+    'field_teaser' => array(
+      0 => array(
+        'value' => 'Dette er et ugentlig 2-lektioners modul som vil ændre indhold i løbet af semestret. I starten vil der være niveaudelt teori/hørelære for alle, men efter ca. 4 gange vil der blive mulighed for, at vælge mellem forskellige linjerelaterede fag.',
+      )
+    ),
+    'body' => 'Dette er et ugentlig 2-lektioners modul som vil ændre indhold i løbet af semestret. I starten vil der være niveaudelt teori/hørelære for alle, men efter ca. 4 gange vil der blive mulighed for, at vælge mellem forskellige linjerelaterede fag. Det kan fx være:
+
+* SDS (Sang, Dans og Spil)
+* Teori og hørelære
+* "Open Door", "Fri Improvisation", eller Intuitiv Improvisation
+* Improvisation
+* Sangworkshop
+* Rotation',
+    'taxonomy' => array(
+      15 => 15,
+      16 => 16,
+      17 => 17,
+      18 => 18,
+      19 => 19,
+      20 => 20,
+      21 => 21,
+      22 => 22,
+      23 => 23,
+    ),
+    'field_created' => array(
+      0 => array(
+        'value' => '2010-04-17 10:18:00',
+        'timezone' => 'Europe/Copenhagen',
+        'timezone_db' => 'UTC',
+        'date_type' => 'datetime',
+      ),
+    ),
+    'field_image_ref' => array(
+      0 => array(
+        'nid' => 20,
+      ),
+    ),
+  ),
 
   /* --- BAS -------------------------------------------------------------- */
   array(
