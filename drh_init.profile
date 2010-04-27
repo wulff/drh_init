@@ -54,6 +54,7 @@ function drh_init_profile_modules() {
     'imagecache_ui',
     'imagefield',
     'install_profile_api',
+    'jcalendar',
     'jquery_ui',
     'l10n_client',
     'lightbox2',
@@ -199,6 +200,7 @@ function drh_init_profile_tasks(&$task, $url) {
       );
 
       $vocabs = file_scan_directory('./profiles/drh_init/taxonomy', '\.inc$', array('.', '..', 'CVS', '.svn', '.git'), 0, TRUE, 'name');
+      ksort($vocabs);
       foreach ($vocabs as $name => $file) {
         $content = file_get_contents($file->filename);
         $batch['operations'][] = array('_drh_init_taxonomy_export_import', array($content));
@@ -295,7 +297,9 @@ function drh_init_profile_tasks(&$task, $url) {
       $mlid = menu_link_save($item);
       $item = array('link_path' => 'node/17', 'link_title' => 'Sommerkurser', 'menu_name' => 'primary-links', 'weight' => 5);
       $mlid = menu_link_save($item);
-      $item = array('link_path' => 'kontakt', 'link_title' => 'Kontakt', 'menu_name' => 'primary-links', 'weight' => 6);
+      $item = array('link_path' => 'kalender', 'link_title' => 'Kalender', 'menu_name' => 'primary-links', 'weight' => 6);
+      $mlid = menu_link_save($item);
+      $item = array('link_path' => 'kontakt', 'link_title' => 'Kontakt', 'menu_name' => 'primary-links', 'weight' => 7);
       $mlid = menu_link_save($item);
         $item = array('link_path' => 'node/9', 'link_title' => 'Kort', 'menu_name' => 'primary-links', 'weight' => 1, 'plid' => $mlid);
         menu_link_save($item);
